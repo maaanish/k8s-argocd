@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps-dev1
+  namespace: argocd
+spec:
+  # The project the application belongs to.
+  project: default
+  # Source of the application manifests
+  source:
+    repoURL: 'https://github.com/alaghusundhar/sundar-argocd-apps.git'
+    targetRevision: master
+    path: app-off-apps/dev1/sundar-demo-app1
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: sundar-demo-app-dev1
+  syncPolicy:
+   automated:
+     selfHeal: true
+     prune: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps-dev1-jenkins
+  namespace: argocd
+spec:
+  # The project the application belongs to.
+  project: default
+  # Source of the application manifests
+  source:
+    repoURL: 'https://github.com/alaghusundhar/sundar-argocd-apps.git'
+    targetRevision: master
+    path: app-off-apps/dev1/jenkins
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: jenkins
+  syncPolicy:
+   automated:
+     selfHeal: true
+     prune: true
