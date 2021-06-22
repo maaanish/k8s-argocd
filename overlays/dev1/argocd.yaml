@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/alaghusundhar/sundar-argocd.git'
+    repoURL: 'https://github.com/maaanish/k8s-argocd.git'
     targetRevision: master
     path: overlays/dev1
   destination:
