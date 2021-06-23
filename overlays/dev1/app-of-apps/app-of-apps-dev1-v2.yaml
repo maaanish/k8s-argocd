@@ -13,7 +13,7 @@ spec:
     path: app-off-apps/dev1/demo-app1
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: demo-app-dev1
+    namespace: argocd
   syncPolicy:
    automated:
      selfHeal: true
