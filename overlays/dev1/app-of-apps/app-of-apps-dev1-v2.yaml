@@ -2,7 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app-of-apps-dev1
-  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   # The project the application belongs to.
   project: default
