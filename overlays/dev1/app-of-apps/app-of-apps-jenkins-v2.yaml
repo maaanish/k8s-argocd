@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps-problems-v2
+  name: app-of-apps-jenkins-v2
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -9,8 +9,8 @@ spec:
     namespace: argocd
     server: "https://kubernetes.default.svc"
   source:
-    path: app-of-apps/dev1/jenkins
-    repoURL: "https://github.com/maaanish/k8s-argocd-apps"
+    path: app-off-apps/dev1/jenkins
+    repoURL: "https://github.com/maaanish/k8s-argocd-apps.git"
     targetRevision: HEAD
     directory:
       recurse: true
